@@ -19,7 +19,7 @@ Developed during the **National Telecommunication Institute (NTI)** IoT Training
 
 
 ![NTI](https://img.shields.io/badge/NTI-IoT%20Training-blue)
-![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?logo=espressif&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?logo=espressif&logoColor=red)
 ![MicroPython](https://img.shields.io/badge/MicroPython-1.28-2B2728?logo=micropython&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-Protocol-660066?logo=eclipsemosquitto&logoColor=white)
 ![Node-RED](https://img.shields.io/badge/Node--RED-Dashboard-8F0000?logo=nodered&logoColor=white)
