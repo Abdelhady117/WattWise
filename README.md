@@ -12,11 +12,13 @@
 Monitor • Analyze • Optimize
 </p>
 
-![ESP32](https://img.shields.io/badge/ESP32-IoT-blue)
-![MicroPython](https://img.shields.io/badge/MicroPython-1.28-green)
-![MQTT](https://img.shields.io/badge/MQTT-Protocol-orange)
-![Node--RED](https://img.shields.io/badge/Node--RED-Dashboard-red)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?logo=espressif)
+![MicroPython](https://img.shields.io/badge/MicroPython-1.28-2B2728?logo=micropython)
+![MQTT](https://img.shields.io/badge/MQTT-Protocol-660066?logo=eclipse-mosquitto)
+![Node-RED](https://img.shields.io/badge/Node--RED-Dashboard-8F0000?logo=nodered)
+![Wokwi](https://img.shields.io/badge/Wokwi-Simulation-0096FF)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
