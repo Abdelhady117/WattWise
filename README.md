@@ -71,7 +71,7 @@ Beyond monitoring, WattWise aims to help users make smarter energy decisions by 
 ## 🏗 System Architecture
 
 <p align="center">
-  <img src="assets/images/system-architecture.png" alt="System Architecture" width="900">
+  <img src="assets/WattWise-System_Architecture.png" alt="System Architecture" width="900">
 </p>
 
 The system consists of:
@@ -157,7 +157,8 @@ The Node-RED dashboard provides:
 * Energy Advisor recommendations
 
 <p align="center">
-  <img src="assets/images/dashboard-home.png" alt="Dashboard" width="900">
+  <img src="dashboard/Monitoring1.jpeg" alt="Dashboard" width="900">
+  <img src="dashboard/Monitoring2-&-Power_Meter.jpeg" alt="Dashboard" width="900">
 </p>
 
 ---
