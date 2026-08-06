@@ -12,8 +12,13 @@
 Monitor • Analyze • Optimize
 </p>
 
-![Wokwi](https://img.shields.io/badge/Wokwi-Simulation-0096FF?logo=wokwi&logoColor=white)
-![NTI](https://img.shields.io/badge/NTI-IoT%20Training-blue?logo=nti&logoColor=white)
+<div align="center">
+
+Developed during the **National Telecommunication Institute (NTI)** IoT Training Program
+
+<img src="https://www.nti.sci.eg/images/logo.png" height="70">
+
+</div>
 ![NTI](https://img.shields.io/badge/NTI-IoT%20Training-blue)
 ![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?logo=espressif)
 ![MicroPython](https://img.shields.io/badge/MicroPython-1.28-2B2728?logo=micropython)
