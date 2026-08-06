@@ -168,7 +168,7 @@ The complete ESP32 simulation is available in the repository.
 
 **Simulation Link**
 
-> [*(Insert your Wokwi project link here.)*](https://wokwi.com/projects/471591375463504897)
+> [*(WattWise Simulation)*](https://wokwi.com/projects/471591375463504897)
 
 <p align="center">
   <img src="wokwi/wokwi.jpeg" alt="Wokwi Simulation" width="900">
