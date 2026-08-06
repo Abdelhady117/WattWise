@@ -1,10 +1,4 @@
-# WattWise
-
 # ⚡ WattWise
-
-<p align="center">
-  <img src="assets/logo/wattwise-logo.png" alt="WattWise Logo" width="180">
-</p>
 
 <h3 align="center">An IoT-Based Home Energy Management System</h3>
 
