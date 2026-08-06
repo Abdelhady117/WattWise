@@ -12,19 +12,12 @@
 Monitor • Analyze • Optimize
 </p>
 
-<div align="center">
-Developed during the **National Telecommunication Institute (NTI)** IoT Training Program
-<img src="https://www.nti.sci.eg/images/logo.png" height="70">
-</div>
-
-
 ![NTI](https://img.shields.io/badge/NTI-IoT%20Training-blue)
 ![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?logo=espressif&logoColor=red)
 ![MicroPython](https://img.shields.io/badge/MicroPython-1.28-2B2728?logo=micropython&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-Protocol-660066?logo=eclipsemosquitto&logoColor=white)
 ![Node-RED](https://img.shields.io/badge/Node--RED-Dashboard-8F0000?logo=nodered&logoColor=white)
 ![Wokwi](https://img.shields.io/badge/Wokwi-Simulation-0096FF?logo=wokwi&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-success?logo=opensourceinitiative&logoColor=white)
 
 ---
@@ -233,3 +226,7 @@ See the **LICENSE** file for more information.
 This project was developed as part of the **National Telecommunication Institute (NTI) IoT Training Program**.
 
 Special thanks to the NTI instructors and mentors for their continuous guidance and support throughout the Training Program.
+
+<div align="center">
+<img src="https://www.nti.sci.eg/images/logo.png" height="70">
+</div>
