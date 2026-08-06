@@ -12,6 +12,12 @@
 Monitor • Analyze • Optimize
 </p>
 
+![ESP32](https://img.shields.io/badge/ESP32-IoT-blue)
+![MicroPython](https://img.shields.io/badge/MicroPython-1.28-green)
+![MQTT](https://img.shields.io/badge/MQTT-Protocol-orange)
+![Node--RED](https://img.shields.io/badge/Node--RED-Dashboard-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 ---
 
 ## 📖 Overview
