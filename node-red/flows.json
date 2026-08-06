@@ -1,0 +1,924 @@
+[
+    {
+        "id": "f353021935d92ed7",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0c0dbdb3e1bf1476",
+        "type": "mqtt in",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "topic": "electric11",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "4bfd599f61a813b0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "f7c365d938875059",
+                "c42dab9b0d707325",
+                "fc935f3f36483581",
+                "aebf4b5c25892fde",
+                "b5313433697e9334",
+                "0d2e42cab727e0a0",
+                "4065515e2adb5107",
+                "5277e7a820e17a2f",
+                "82242694b3b52d0b",
+                "83ca0ae6a55b67bf",
+                "d98db44331602ee8",
+                "6e8ad76f696b1cd5"
+            ]
+        ]
+    },
+    {
+        "id": "f7c365d938875059",
+        "type": "function",
+        "z": "f353021935d92ed7",
+        "name": "Databased Function",
+        "func": "// 1. Add a timestamp to the incoming sensor data so you know when it arrived\nmsg.payload.timestamp = new Date().toISOString();\n\n// 2. Generate today's date for the filename (Format: YYYY-MM-DD)\nlet dateString = new Date().toISOString().split('T')[0];\n\n// 3. Set the dynamic file path/name\n// Note: Make sure the folder \"C:/iot_logs/\" actually exists on your computer!\nmsg.filename = \"G:\\\\iot_logs\\\\energy_data.json\";\n\n// 4. Convert the data object into a JSON text string so the file can read it\nmsg.payload = JSON.stringify(msg.payload);\n\n// 5. Send the message forward to the write file node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 260,
+        "wires": [
+            [
+                "3174f4ebfb9995e5"
+            ]
+        ]
+    },
+    {
+        "id": "3174f4ebfb9995e5",
+        "type": "file",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "filename": "G:\\iot_logs\\energy_data.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 940,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c42dab9b0d707325",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "Voltage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.voltage",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 300,
+        "wires": [
+            [
+                "ce6763bde549c243"
+            ]
+        ]
+    },
+    {
+        "id": "fc935f3f36483581",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "Current",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.current",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 340,
+        "wires": [
+            [
+                "68806b1baf06913e"
+            ]
+        ]
+    },
+    {
+        "id": "aebf4b5c25892fde",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "Power_w",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.power_w",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 380,
+        "wires": [
+            [
+                "30705a587ea2104b"
+            ]
+        ]
+    },
+    {
+        "id": "68806b1baf06913e",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "current",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce6763bde549c243",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "voltage",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30705a587ea2104b",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power_KW",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5313433697e9334",
+        "type": "debug",
+        "z": "f353021935d92ed7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "24925e10862f5456",
+        "type": "mqtt out",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "topic": "electric/control11",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4bfd599f61a813b0",
+        "x": 850,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "cbac1beeb9c9419e",
+        "type": "ui_button",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset Meter",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "RESET",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 550,
+        "y": 680,
+        "wires": [
+            [
+                "24925e10862f5456"
+            ]
+        ]
+    },
+    {
+        "id": "0d2e42cab727e0a0",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "peak_power_w",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.peak_power_w",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 420,
+        "wires": [
+            [
+                "3adf02445d8bd857"
+            ]
+        ]
+    },
+    {
+        "id": "4065515e2adb5107",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "total_kwh",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.total_kwh",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 460,
+        "wires": [
+            [
+                "245e3ddefe9d05dc"
+            ]
+        ]
+    },
+    {
+        "id": "3adf02445d8bd857",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "peakpower",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "245e3ddefe9d05dc",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "total KWh",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d98db44331602ee8",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "co2_kg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.co2_kg",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 540,
+        "wires": [
+            [
+                "0c24ada52e21fe8e"
+            ]
+        ]
+    },
+    {
+        "id": "5277e7a820e17a2f",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "total_cost_egp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.total_cost_egp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 500,
+        "wires": [
+            [
+                "5b51b815a2a8c11e"
+            ]
+        ]
+    },
+    {
+        "id": "82242694b3b52d0b",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "Relay_state",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.relay_state",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 580,
+        "wires": [
+            [
+                "a2354b5865fc7a87"
+            ]
+        ]
+    },
+    {
+        "id": "5b51b815a2a8c11e",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "label": "total cost egp",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c24ada52e21fe8e",
+        "type": "ui_chart",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "group": "b8244583b624b966",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "label": "co2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "83ca0ae6a55b67bf",
+        "type": "change",
+        "z": "f353021935d92ed7",
+        "name": "status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.status",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 620,
+        "wires": [
+            [
+                "f4b2c2ad4be28e8d"
+            ]
+        ]
+    },
+    {
+        "id": "f4b2c2ad4be28e8d",
+        "type": "ui_text",
+        "z": "f353021935d92ed7",
+        "group": "b8244583b624b966",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 770,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "da1da304a99f5b0a",
+        "type": "ui_switch",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "label": "Relay",
+        "tooltip": "",
+        "group": "b8244583b624b966",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "RELAY_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "RELAY_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 570,
+        "y": 720,
+        "wires": [
+            [
+                "24925e10862f5456"
+            ]
+        ]
+    },
+    {
+        "id": "4fee1b923e31325a",
+        "type": "ui_switch",
+        "z": "f353021935d92ed7",
+        "name": "",
+        "label": "Buzzer",
+        "tooltip": "",
+        "group": "b8244583b624b966",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "BUZZER_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "BUZZER_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 560,
+        "y": 760,
+        "wires": [
+            [
+                "24925e10862f5456"
+            ]
+        ]
+    },
+    {
+        "id": "6e8ad76f696b1cd5",
+        "type": "function",
+        "z": "f353021935d92ed7",
+        "name": "function 1",
+        "func": "// 1. Grab the total energy used so far from the ESP32\nlet current_usage = msg.payload.total_kwh;\nlet daily_allowance = 5.0;\nlet Chip_Number = 1;\n\n// 2. Determine which Chip (Tier) you are currently in based on usage\nif (current_usage <= 5.0) {\n    daily_allowance = 5.0;\n    Chip_Number = 1;\n} else if (current_usage <= 10.0) {\n    daily_allowance = 10.0;\n    Chip_Number = 2;\n} else if (current_usage <= 20.0) {\n    daily_allowance = 20.0;\n    Chip_Number = 3;\n} else {\n    daily_allowance = 35.0;\n    Chip_Number = 4;\n}\n\n// 3. Calculate how much power is left before jumping to the NEXT chip\nlet remaining_power = daily_allowance - current_usage;\n\n// Prevent negative numbers if you somehow exceed the final 35 kWh chip\nif (remaining_power < 0) {\n    remaining_power = 0;\n}\n\n// 4. Send BOTH values forward by grouping them in an object (just like your ESP32 does)\nmsg.payload = {\n    remaining_kwh: parseFloat(remaining_power.toFixed(4)),\n    current_chip: Chip_Number\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "de40a6cd877d7aaa",
+                "f305cfccf0ab78c9"
+            ]
+        ]
+    },
+    {
+        "id": "de40a6cd877d7aaa",
+        "type": "ui_text",
+        "z": "f353021935d92ed7",
+        "group": "b8244583b624b966",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Remaining power",
+        "format": "{{msg.payload.remaining_kwh}}kwh",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 830,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f305cfccf0ab78c9",
+        "type": "ui_text",
+        "z": "f353021935d92ed7",
+        "group": "b8244583b624b966",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current_Tier",
+        "format": "{{msg.payload.current_chip}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 810,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a2354b5865fc7a87",
+        "type": "ui_text",
+        "z": "f353021935d92ed7",
+        "group": "b8244583b624b966",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Relay_state",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 790,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4bfd599f61a813b0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b8244583b624b966",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "69265fa7bf50b5b1",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "69265fa7bf50b5b1",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9461e47de3d7d12d",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
