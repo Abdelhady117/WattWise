@@ -9,7 +9,6 @@ import ssd1306
 # 1. Output pins config
 relay = Pin(26, Pin.OUT)
 buzzer = Pin(25, Pin.OUT)
-green_led = Pin(27, Pin.OUT)
 
 # 2. (ADC) config 
 pot_current = ADC(Pin(34))
@@ -82,7 +81,6 @@ def save_flash_data(kwh, peak):
 # Initial values
 relay.value(1)
 buzzer.value(0)
-green_led.value(1)
 
 # 7. MQTT Callback
 def mqtt_callback(topic, msg):
@@ -172,13 +170,10 @@ def main():
         # Overload protection only checks if we actually have current flowing
         if raw_current > 2048:
             buzzer.value(1)
-            green_led.value(0)
             relay.value(0)
             status = "OVERLOAD"
         else:
             buzzer.value(0)
-            green_led.value(1)
-
 
         # Update OLED screens
         if oled1 and oled2:
