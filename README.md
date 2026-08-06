@@ -223,4 +223,4 @@ See the **LICENSE** file for more information.
 
 This project was developed as part of the **National Telecommunication Institute (NTI) IoT Training Program**.
 
-Special thanks to the NTI instructors and mentors for their continuous guidance and support throughout the project.
+Special thanks to the NTI instructors and mentors for their continuous guidance and support throughout the Training Program.
