@@ -18,7 +18,7 @@ Monitor • Analyze • Optimize
 ![MQTT](https://img.shields.io/badge/MQTT-Protocol-660066?logo=eclipsemosquitto&logoColor=white)
 ![Node-RED](https://img.shields.io/badge/Node--RED-Dashboard-8F0000?logo=nodered&logoColor=white)
 ![Wokwi](https://img.shields.io/badge/Wokwi-Simulation-0096FF?logo=wokwi&logoColor=white)
-![MIT License](https://img.shields.io/badge/License-MIT-success?logo=opensourceinitiative&logoColor=white)
+![MIT License](https://img.shields.io/badge/License-MIT-success?logo=opensourceinitiative&logoColor=green)
 
 ---
 
