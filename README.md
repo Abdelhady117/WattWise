@@ -17,6 +17,7 @@ Developed during the **National Telecommunication Institute (NTI)** IoT Training
 <img src="https://www.nti.sci.eg/images/logo.png" height="70">
 </div>
 
+
 ![NTI](https://img.shields.io/badge/NTI-IoT%20Training-blue)
 ![ESP32](https://img.shields.io/badge/ESP32-IoT-blue?logo=espressif)
 ![MicroPython](https://img.shields.io/badge/MicroPython-1.28-2B2728?logo=micropython)
