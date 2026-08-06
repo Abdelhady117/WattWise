@@ -4,4 +4,4 @@
 - Abdelhady Muhammad — abdelhadymohammed1763@gmail.com
 - Ahmed Khalid — *(add email)*
 - Farouk Philip — *(add email)*
-- Abdelrahman Hendawi — *(add email)*
+- Abdelrahman Hendawi — abdelrahmanelhendawi@gmail.com
