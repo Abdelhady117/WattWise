@@ -2,14 +2,6 @@
 
 # ⚡ WattWise
 
-      _______
-
-    /         \
-
-   |   🏠⚡📈  |
-
-    \_______/
-
 <p align="center">
   <img src="assets/logo/wattwise-logo.png" alt="WattWise Logo" width="180">
 </p>
