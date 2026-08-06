@@ -171,7 +171,7 @@ The complete ESP32 simulation is available in the repository.
 > *(Insert your Wokwi project link here.)*
 
 <p align="center">
-  <img src="assets/images/wokwi-simulation.png" alt="Wokwi Simulation" width="900">
+  <img src="wokwi/wokwi.jpeg" alt="Wokwi Simulation" width="900">
 </p>
 
 ---
