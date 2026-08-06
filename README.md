@@ -1,4 +1,4 @@
-# ⚡ WattWise
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/46f13c0e-c43a-4f0f-a585-fb1f60a65a8d" /># ⚡ WattWise
 
 <h3 align="center">An IoT-Based Home Energy Management System</h3>
 
@@ -117,19 +117,20 @@ WattWise/
 │
 ├── README.md
 ├── AUTHORS.md
-├── LICENSE
-├── .gitignore
+│
+├── dashboard/
+│   ├── dashboard1.
+│   └── WattWise_Presentation.pptx
 │
 ├── docs/
-│   ├── Smart_Energy_Advisor_Report.pdf
-│   └── Presentation.pptx
+│   ├── WattWise_Report.pdf
+│   └── WattWise_Presentation.pptx
 │
-├── firmware/
-│   └── wokwi/
-│       ├── main.py
-│       ├── diagram.json
-│       ├── ssd1306.py
-│       └── electric.py
+├── wokwi/
+│   ├── main.py
+│   ├── diagram.json
+│   ├── ssd1306.py
+│   └── wokwi.jpeg
 │
 ├── dashboard/
 │   ├── node-red-flow.json
