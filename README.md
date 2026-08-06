@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/46f13c0e-c43a-4f0f-a585-fb1f60a65a8d" /># ⚡ WattWise
+# ⚡ WattWise
 
 <h3 align="center">An IoT-Based Home Energy Management System</h3>
 
