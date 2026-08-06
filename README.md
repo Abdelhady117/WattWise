@@ -118,28 +118,27 @@ WattWise/
 ├── README.md
 ├── AUTHORS.md
 │
+├── assets/
+│   ├── WattWise-System_Architecture.png
+│   └── demo.mp4
+│
 ├── dashboard/
-│   ├── dashboard1.
-│   └── WattWise_Presentation.pptx
+│   ├── Monitoring1.jpeg
+│   └── Monitoring2-&-Power_Meter.jpeg
 │
 ├── docs/
 │   ├── WattWise_Report.pdf
 │   └── WattWise_Presentation.pptx
 │
+├── node-red/
+│   ├── flow.json
+│   └── node-red.jpeg
+│
 ├── wokwi/
-│   ├── main.py
-│   ├── diagram.json
-│   ├── ssd1306.py
-│   └── wokwi.jpeg
-│
-├── dashboard/
-│   ├── node-red-flow.json
-│   └── screenshots/
-│
-└── assets/
-    ├── logo/
-    ├── images/
-    └── demo/
+    ├── main.py
+    ├── diagram.json
+    ├── ssd1306.py
+    └── wokwi.jpeg
 ```
 
 ---
